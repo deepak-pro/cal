@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 
 
@@ -52,8 +53,6 @@ int main(){
 		printf("Year is not a leap year\n");
 	}
 
-
-
 	int nod ;
 	switch(m){
 		case 1 : printf("    January %d\n" , y);
@@ -105,11 +104,10 @@ int main(){
 			printf("\n");
 			dow = 1 ;
 		}
-		++dow ;
 		if(dow>1 && counter==1){
 			int space = dow - 1 ;
 			while(space--){
-				printf("  ");
+				printf("   ");
 			}
 		}
 		if(counter/10 == 0){
@@ -118,6 +116,7 @@ int main(){
 		printf("%d" , counter);
 		printf(" ");
 		++counter ;
+		++dow ;
 	}
 
 	printf("\n");
