@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
 
 
 bool checkLeapYear(int year){
@@ -41,17 +42,26 @@ int dayOfWeek(int k ,int m , int y){
 	return dow;
 }
 
-int main(){
-
-	int d , m , y ;
-	scanf("%d %d %d" , &d , &m , &y);
-
-
-	if(checkLeapYear(y)){
-		printf("Year is a leap year\n");
-	}else {
-		printf("Year is not a leap year\n");
+int main(int argc, char const *argv[]){
+	int i ;
+	int m , y ;
+	time_t now = time(NULL) ;
+	struct tm *t = localtime(&now) ;
+	if(argc == 1){
+		m = t->tm_mon+1  ;
+		y = t->tm_year + 1900 ;
+		printf(" Time : %d:%d:%d \n", t->tm_hour , t->tm_min , t->tm_sec );
+	}else{
+		printf("Enter Month number and Year seperated by space >");
+		scanf("%d %d", &m , &y);
 	}
+
+
+	// if(checkLeapYear(y)){
+	// 	printf("Year is a leap year\n");
+	// }else {
+	// 	printf("Year is not a leap year\n");
+	// }
 
 	int nod ;
 	switch(m){
