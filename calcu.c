@@ -109,6 +109,10 @@ int main(int argc, char const *argv[]){
 				  return 0;
 	}
 
+	if(checkLeapYear(y) && m==2){
+		nod = 29 ;
+	}
+
 	printf("Su Mo Tu We Th Fr Sa\n") ;
 
 	int counter = 1 ;
