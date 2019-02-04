@@ -44,18 +44,22 @@ int dayOfWeek(int k ,int m , int y){
 
 int main(int argc, char const *argv[]){
 	int i ;
-	int m , y ;
+	int d , m , y ;
 	time_t now = time(NULL) ;
 	struct tm *t = localtime(&now) ;
+	bool today = false ;
 	if(argc == 1){
+		d = t->tm_mday ;
 		m = t->tm_mon+1  ;
 		y = t->tm_year + 1900 ;
-		printf(" Time : %d:%d:%d \n", t->tm_hour , t->tm_min , t->tm_sec );
+		printf("\033[0;36m");
+		printf("    Time : %d:%d:%d \n", t->tm_hour , t->tm_min , t->tm_sec );
+		printf("\033[0m");
+		today = true ;
 	}else{
 		printf("Enter Month number and Year seperated by space >");
 		scanf("%d %d", &m , &y);
 	}
-
 
 	// if(checkLeapYear(y)){
 	// 	printf("Year is a leap year\n");
@@ -123,7 +127,15 @@ int main(int argc, char const *argv[]){
 		if(counter/10 == 0){
 			printf(" ");
 		}
-		printf("%d" , counter);
+		if(counter == d && today == true){
+			printf("\033[0;32m");
+			printf("%d" , counter);
+			printf("\033[0m");
+		}else {
+			printf("%d" , counter);
+		}
+
+
 		printf(" ");
 		++counter ;
 		++dow ;
