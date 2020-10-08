@@ -1,6 +1,7 @@
 # cal
-A terminal based calender
-![Screenshot](https://githib.com/deepak-pro/cal/screenshot.png)
+### A terminal based calender
+
+![Screenshot](https://github.com/deepak-pro/cal/blob/master/screenshot.png?raw=true)
 
 ## Installation
 
