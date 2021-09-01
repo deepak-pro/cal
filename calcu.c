@@ -13,7 +13,6 @@ bool checkLeapYear(int year){
 }
 
 int dayOfWeek(int k ,int m , int y){
-
 	m = m - 2 ;
 	if(m == 0){
 		m = 12 ;
