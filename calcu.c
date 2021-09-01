@@ -37,7 +37,6 @@ int dayOfWeek(int k ,int m , int y){
     	dow = f % 7 ;
     }
     //printf("dow is %d\n", dow );
-
 	return dow;
 }
 
